@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.vk.api:sdk:1.0.11'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+}
+
+test {
+    useTestNG(){
+        includeGroups 'add_like', 'delete_like', 'get_list_like', 'is_liked'
+    }
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}

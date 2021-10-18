@@ -1,0 +1,3 @@
+rootProject.name = 'vktests'
+include 'Helper'
+
